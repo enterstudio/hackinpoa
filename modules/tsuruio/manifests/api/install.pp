@@ -1,4 +1,4 @@
-class tsuruio::api::install {
+class tsuruio::api::install inherits tsuruio::api::params {
 
   class { '::api::install':
     tsuru_server_version                        => $tsuruio::api::params::tsuru_server_version,

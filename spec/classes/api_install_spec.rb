@@ -15,6 +15,8 @@ describe 'tsuruio::api::install' do
 
     it { should contain_class('api') }
 
+    it { should contain_file('/etc/tsuru/tsuru.conf').with_content(/host: "http:\/\/api.internal.tsuru.io"/) }
+
   end
 
 end
