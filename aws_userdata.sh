@@ -16,8 +16,8 @@ function get_aws_credentials () {
     local security_group=$1
     aws_json_credentials=$(meta_info iam/security-credentials/"${security_group}")
     aws_keys=($(echo "${aws_json_credentials}" | jq '.AccessKeyId , .SecretAccessKey'))
-    export FACTER_AWS_ACCESS_KEY="${aws_keys[0]}"
-    export FACTER_AWS_SECRET_KEY="${aws_keys[1]}"
+    export FACTER_AWS_ACCESS_KEY=${aws_keys[0]}
+    export FACTER_AWS_SECRET_KEY=${aws_keys[1]}
 }
 
 function puppet_module_group() {
