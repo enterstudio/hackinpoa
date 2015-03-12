@@ -94,4 +94,10 @@ class tsuruio::api::install inherits tsuruio::api::params {
                   ]
   }
 
+  cron { 'puppet apply' :
+    command => '/var/lib/cloud/instance/scripts/part-001',
+    minute  => fqdn_rand(60),
+    hour    => '*'
+  }
+
 }
