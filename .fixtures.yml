@@ -1,0 +1,16 @@
+fixtures:
+    forge_modules:
+        stdlib: "puppetlabs/stdlib"
+        api: "tsuru/api"
+        apt:
+            repo: "puppetlabs/apt"
+            ref: 1.6.0
+        base:
+            repo: "tsuru/base"
+            ref: 0.0.4
+        router:
+            repo: "tsuru/router"
+            ref: 0.0.4
+
+    symlinks:
+        tsuruio: "#{source_dir}/modules/tsuruio"

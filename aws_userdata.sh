@@ -73,7 +73,7 @@ function main() {
 
     get_aws_credentials "${machine_group}"
     aws s3 sync s3://tsuru-confs/ /var/cache/puppet-data
-    cd /var/cache/puppet-data/manifests && puppet apply --modulepath '/etc/puppet/modules' ${machine_group}.pp -l /var/log/puppet.log
+    cd /var/cache/puppet-data/manifests && puppet apply --modulepath '/etc/puppet/modules:/var/cache/puppet-data/modules' ${machine_group}.pp -l /var/log/puppet.log
     auto_insert_on_elb "${machine_group}"
 }
 

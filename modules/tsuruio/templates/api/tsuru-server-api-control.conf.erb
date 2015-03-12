@@ -1,0 +1,25 @@
+description "Tsuru api service control and check"
+
+start on runlevel [2345]
+stop on runlevel [06]
+
+pre-start exec start tsuru-server-api
+
+script
+    # we need this section so that pre-stop gets run!
+    # https://bugs.launchpad.net/upstart/+bug/252996
+    while true
+        do sleep 1d
+    done
+end script
+
+pre-stop script
+  CONFIG_FILE="/etc/tsuru/tsuru.conf"
+  TSR_API_ENABLED="yes"
+  if [ -f /etc/default/tsuru-server ]; then . /etc/default/tsuru-server; fi
+  if [ "x$TSR_API_ENABLED" = "xyes" ]; then
+    /usr/bin/tsr api --config=${CONFIG_FILE} -t || ( start ; exit 0 )
+    /usr/local/bin/check_locked_apps.py ${CONFIG_FILE} && stop tsuru-server-api
+    if [ "$?" = "2" ]; then start ; exit 0 ; fi
+  fi
+end script

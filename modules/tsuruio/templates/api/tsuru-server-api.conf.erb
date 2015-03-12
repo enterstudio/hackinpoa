@@ -1,0 +1,17 @@
+limit nofile 10000 10000
+
+kill timeout 180
+
+stop on stopped tsuru-server-api-control
+
+respawn
+
+setuid tsuru
+setgid tsuru
+
+script
+  CONFIG_FILE="/etc/tsuru/tsuru.conf"
+  TSR_API_ENABLED="yes"
+  if [ -f /etc/default/tsuru-server ]; then . /etc/default/tsuru-server; fi
+  if [ "x$TSR_API_ENABLED" = "xyes" ]; then exec /usr/bin/tsr api --config=${CONFIG_FILE}; fi
+end script

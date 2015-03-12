@@ -1,0 +1,6 @@
+.bundle/
+.librarian/
+.tmp/
+spec/fixtures/manifests
+spec/fixtures/modules
+Puppetfile.lock
