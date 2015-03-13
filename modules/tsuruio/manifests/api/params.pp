@@ -46,9 +46,7 @@ class tsuruio::api::params {
   $docker_cluster_mongodb_db = 'tsuru_cluster'
   $docker_run_cmd_bin = '/var/lib/tsuru/start'
   $docker_run_cmd_port = '8888'
-  $docker_ssh_add_key_cmd = '/var/lib/tsuru/add-key'
   $docker_user = 'ubuntu'
-  $docker_sshd_path = 'sudo /usr/sbin/sshd'
 
   # containers healing
   $docker_healing_heal_nodes = true
