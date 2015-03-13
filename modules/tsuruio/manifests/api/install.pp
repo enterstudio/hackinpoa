@@ -34,7 +34,6 @@ class tsuruio::api::install inherits tsuruio::api::params {
     docker_cluster_mongodb_db                   => $tsuruio::api::params::docker_cluster_mongodb_db,
     docker_run_cmd_bin                          => $tsuruio::api::params::docker_run_cmd_bin,
     docker_run_cmd_port                         => $tsuruio::api::params::docker_run_cmd_port,
-    docker_public_key                           => $tsuruio::api::params::docker_public_key,
     docker_user                                 => $tsuruio::api::params::docker_user,
     docker_healing_heal_nodes                   => $tsuruio::api::params::docker_healing_heal_nodes,
     docker_healing_active_monitoring_interval   => $tsuruio::api::params::docker_healing_active_monitoring_interval,
