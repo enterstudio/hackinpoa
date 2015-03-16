@@ -1,0 +1,1 @@
+include tsuruio::registry::install
