@@ -3,7 +3,7 @@ class tsuruio::docker::install inherits tsuruio::docker::params {
   require ::base
 
   # Docker firewall
-  resources { '::firewall':
+  resources { 'firewall':
     purge => false
   }
 

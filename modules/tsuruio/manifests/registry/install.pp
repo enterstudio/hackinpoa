@@ -1,6 +1,6 @@
 class tsuruio::registry::install inherits tsuruio::registry::params {
 
-  require tsuruio::docker::install
+  include tsuruio::docker::install
 
   exec { 'install registry':
     command => '/usr/bin/docker pull registry',
