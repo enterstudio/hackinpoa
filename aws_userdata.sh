@@ -23,18 +23,19 @@ function get_aws_credentials () {
 function puppet_module_group() {
     case $1 in
         docker-nodes)
-            "tsuru/docker puppetlabs/firewall"
+            echo "tsuru/docker puppetlabs/firewall"
         ;;
         registry)
-            "tsuru/docker puppetlabs/firewall"
+            echo "tsuru/docker puppetlabs/firewall"
         ;;
         router)
-            "tsuru/router"
+            echo "tsuru/router"
         ;;
         tsuru-api)
-            "tsuru/api"
+            echo "tsuru/api"
         ;;
         gandalf)
+        ;;
     esac
 }
 

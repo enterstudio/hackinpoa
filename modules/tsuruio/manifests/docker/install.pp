@@ -1,5 +1,7 @@
 class tsuruio::docker::install inherits tsuruio::docker::params {
 
+  require ::base
+
   # Docker firewall
   resources { '::firewall':
     purge => false
@@ -19,6 +21,7 @@ class tsuruio::docker::install inherits tsuruio::docker::params {
     docker_graph_dir             => $tsuruio::docker::params::lvm_mount_point_docker,
     docker_bind                  => $tsuruio::docker::params::bind_docker,
     docker_extra_opts            => $tsuruio::docker::params::extra_opts_docker
-  } 
+  }
 
+  Class['::Base']->Class['::Docker']
 }
