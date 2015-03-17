@@ -31,7 +31,7 @@ class tsuruio::api::params {
   $tsuru_units_per_app = 40
 
   $routers =  { 'hipache_prod' => { 'router_type'    => 'hipache',
-                                    'hipache_domain' => 'hackinpoa.tsuru.io',
+                                    'hipache_domain' => 'app.hackinpoa.tsuru.io',
                                     'hipache_redis_server' => 'redis.internal.tsuru.io:6379' }
               }
 

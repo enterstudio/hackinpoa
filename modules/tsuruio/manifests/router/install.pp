@@ -1,4 +1,4 @@
-class tsuruio::router::install {
+class tsuruio::router::install inherits tsuruio::router::params {
 
   class { '::router::install':
     router_port                     => $tsuruio::router::params::router_port,
@@ -39,5 +39,5 @@ class tsuruio::router::install {
     conf_slave_priority => 0
   }
 
-  Class['tsuruio::router::install']->Class['::router::install']
-} 
+  Class['::base']->Class['tsuruio::router::install']->Class['::router::install']
+}

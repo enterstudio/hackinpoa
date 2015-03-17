@@ -9,7 +9,7 @@ class tsuruio::registry::install inherits tsuruio::registry::params {
   }
 
   exec { 'start registry':
-    command => "/usr/bin/docker run -e SETTINGS_FLAVOR=s3 -e AWS_BUCKET=${tsuruio::registry::params::bucket} \
+    command => "/usr/bin/docker run -d -e SETTINGS_FLAVOR=s3 -e AWS_BUCKET=${tsuruio::registry::params::bucket} \
                 -e STORAGE_PATH=/registry \
                 -e AWS_REGION=${tsuruio::registry::params::aws_region} \
                 -e SEARCH_BACKEND=sqlalchemy \
