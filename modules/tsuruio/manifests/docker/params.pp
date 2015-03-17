@@ -1,4 +1,4 @@
-class tsuruio::docker::params {
+class tsuruio::docker::params inherits tsuruio::common {
 
   $lxc_docker_version = '1.4.1'
   $docker_port = 4243

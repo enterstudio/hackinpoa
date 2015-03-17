@@ -1,6 +1,6 @@
 class tsuruio::docker::install inherits tsuruio::docker::params {
 
-  require ::base
+  include ::base
 
   # Docker firewall
   resources { 'firewall':
@@ -20,8 +20,8 @@ class tsuruio::docker::install inherits tsuruio::docker::params {
     lxc_docker_version           => $tsuruio::docker::params::lxc_docker_version,
     docker_graph_dir             => $tsuruio::docker::params::lvm_mount_point_docker,
     docker_bind                  => $tsuruio::docker::params::bind_docker,
-    docker_extra_opts            => $tsuruio::docker::params::extra_opts_docker
+    docker_extra_opts            => $tsuruio::docker::params::extra_opts_docker,
+    require                      => Class['::Base::Ubuntu']
   }
 
-  Class['::Base']->Class['::Docker']
 }

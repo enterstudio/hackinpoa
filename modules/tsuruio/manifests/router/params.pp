@@ -1,4 +1,4 @@
-class tsuruio::router::params {
+class tsuruio::router::params inherits tsuruio::common {
 
   # Router
   $router_port                     = 8080

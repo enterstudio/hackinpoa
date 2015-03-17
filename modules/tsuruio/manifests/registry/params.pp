@@ -1,4 +1,4 @@
-class tsuruio::registry::params {
+class tsuruio::registry::params inherits tsuruio::common {
 
   $bucket     = 'tsuru-registry'
   $aws_region = 'sa-east-1'

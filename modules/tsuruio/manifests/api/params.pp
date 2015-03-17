@@ -1,4 +1,4 @@
-class tsuruio::api::params {
+class tsuruio::api::params inherits tsuruio::common {
 
   $tsuru_server_version = "0.10.2-0~${::lsbdistcodename}1"
 
