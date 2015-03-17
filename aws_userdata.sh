@@ -29,7 +29,7 @@ function puppet_module_group() {
             echo "tsuru/docker puppetlabs/firewall"
         ;;
         router)
-            echo "tsuru/router"
+            echo "tsuru/router fsalum/redis"
         ;;
         tsuru-api)
             echo "tsuru/api"
