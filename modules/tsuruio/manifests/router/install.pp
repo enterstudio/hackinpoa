@@ -39,5 +39,5 @@ class tsuruio::router::install inherits tsuruio::router::params {
     conf_slave_priority => 0
   }
 
-  Class['::base']->Class['tsuruio::router::install']->Class['::router::install']
+  Class['::base']->Class['::redis']->Class['::router::install']
 }
