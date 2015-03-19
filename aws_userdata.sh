@@ -35,6 +35,7 @@ function puppet_module_group() {
             echo "tsuru/api"
         ;;
         gandalf)
+            echo "tsuru/gandalf"
         ;;
     esac
 }

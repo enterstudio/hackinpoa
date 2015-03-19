@@ -4,6 +4,7 @@ fixtures:
         api: "tsuru/api"
         router: "tsuru/router"
         docker: "tsuru/docker"
+        gandalf: "tsuru/gandalf"
         apt:
             repo: "puppetlabs/apt"
             ref: 1.6.0
@@ -16,5 +17,8 @@ fixtures:
         redis:
             repo: "fsalum/redis"
             ref: 1.0.2
+        python:
+            repo: "stankevich/python"
+            ref: 1.9.0
     symlinks:
         tsuruio: "#{source_dir}/modules/tsuruio"

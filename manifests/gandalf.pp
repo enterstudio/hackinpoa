@@ -1,0 +1,1 @@
+include tsuruio::gandalf::install
