@@ -10,7 +10,8 @@ class tsuruio::api::params inherits tsuruio::common {
 
   $smtp_server = 'localhost'
   $smtp_user = 'tsuru@corp.globo.com'
-
+  
+  $repo_manager = 'gandalf'
   $git_unit_repo = '/home/application/current'
   $git_api_server = 'http://gandalf.internal.tsuru.io'
   $git_rw_host = 'git.hackinpoa.tsuru.io'

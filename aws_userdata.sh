@@ -53,6 +53,9 @@ function auto_insert_on_elb() {
         router)
             call_aws_elb router "${instance_id}"
         ;;
+        gandalf)
+            call_aws_elb gandalf-internal "${instance_id}"
+        ;;
     esac
 }
 

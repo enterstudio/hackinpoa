@@ -7,9 +7,8 @@ class tsuruio::gandalf::install inherits tsuruio::gandalf::params {
     gandalf_storage_type    => $tsuruio::gandalf::params::gandalf_storage_type,
     gandalf_storage_bucket  => $tsuruio::gandalf::params::gandalf_storage_bucket,
     tsuru_api_host          => $tsuruio::gandalf::params::tsuru_api_host,
-    tsuru_api_token         => $tsuruio::gandalf::params::tsuru_api_token
+    tsuru_api_token         => $tsuruio::gandalf::params::tsuru_api_token,
+    require                 => [ Class['::Base'], Class[Apt::Update]  ]
   }
-
-  Class['::base']->Class['::gandalf']
 
 }

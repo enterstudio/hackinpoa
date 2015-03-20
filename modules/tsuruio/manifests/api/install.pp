@@ -8,6 +8,7 @@ class tsuruio::api::install inherits tsuruio::api::params {
     mongodb_database_name                       => $tsuruio::api::params::mongodb_database_name,
     smtp_server                                 => $tsuruio::api::params::smtp_server,
     smtp_user                                   => $tsuruio::api::params::smtp_user,
+    repo_manager                                => $tsuruio::api::params::repo_manager,
     git_unit_repo                               => $tsuruio::api::params::git_unit_repo,
     git_api_server                              => $tsuruio::api::params::git_api_server,
     git_rw_host                                 => $tsuruio::api::params::git_rw_host,
