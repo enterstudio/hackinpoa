@@ -8,16 +8,9 @@ function meta_info () {
 function call_aws_elb () {
     local elb_name=$1
     local instance=$2
-    AWS_DEFAULT_REGION=sa-east-1 LC_ALL=en_US.UTF-8 aws elb register-instances-with-load-balancer --load-balancer-name "${elb_name}" \
-                                                    --instances "${instance}"
-}
-
-function get_aws_credentials () {
-    local security_group=$1
-    aws_json_credentials=$(meta_info iam/security-credentials/"${security_group}")
-    aws_keys=($(echo "${aws_json_credentials}" | jq '.AccessKeyId , .SecretAccessKey'))
-    export FACTER_AWS_ACCESS_KEY=${aws_keys[0]}
-    export FACTER_AWS_SECRET_KEY=${aws_keys[1]}
+    AWS_DEFAULT_REGION=sa-east-1 LC_ALL=en_US.UTF-8 aws elb register-instances-with-load-balancer \
+                                                        --load-balancer-name "${elb_name}" \
+                                                        --instances "${instance}"
 }
 
 function puppet_module_group() {
@@ -80,7 +73,6 @@ function main() {
     fi
     mkdir /var/cache/puppet-data
 
-    get_aws_credentials "${machine_group}"
     aws s3 sync s3://tsuru-confs/ /var/cache/puppet-data
     cd /var/cache/puppet-data/manifests && puppet apply --modulepath '/etc/puppet/modules:/var/cache/puppet-data/modules' "${machine_group}".pp -l /var/log/puppet.log
     auto_insert_on_elb "${machine_group}"
