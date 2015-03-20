@@ -10,4 +10,6 @@ class tsuruio::gandalf::install inherits tsuruio::gandalf::params {
     tsuru_api_token         => $tsuruio::gandalf::params::tsuru_api_token
   }
 
+  Class['::base']->Class['::gandalf']
+
 }

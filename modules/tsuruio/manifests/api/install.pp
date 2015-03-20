@@ -43,12 +43,6 @@ class tsuruio::api::install inherits tsuruio::api::params {
     docker_healing_heal_containers_timeout      => $tsuruio::api::params::docker_healing_heal_containers_timeout,
     docker_healing_events_collection            => $tsuruio::api::params::docker_healing_events_collection,
     tsuru_iaas_default                          => $tsuruio::api::params::tsuru_iaas_default,
-    custom_iaas                                 => $tsuruio::api::params::custom_iaas,
-    ec2_key_id                                  => $tsuruio::api::params::ec2_key_id,
-    ec2_secret_key                              => $tsuruio::api::params::ec2_secret_key,
-    ec2_user_data                               => $tsuruio::api::params::ec2_user_data,
-    iaas_node_protocol                          => $tsuruio::api::params::iaas_node_protocol,
-    iaas_node_port                              => $tsuruio::api::params::iaas_node_port,
     tsuru_debug                                 => $tsuruio::api::params::tsuru_debug
   }
 

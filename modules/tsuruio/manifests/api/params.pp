@@ -1,6 +1,6 @@
 class tsuruio::api::params inherits tsuruio::common {
 
-  $tsuru_server_version = "0.10.2-0~${::lsbdistcodename}1"
+  $tsuru_server_version = "0.10.3-0~${::lsbdistcodename}1"
 
   $tsuru_server_listen = '0.0.0.0:8080'
   $tsuru_host          = 'http://api.internal.tsuru.io'
@@ -58,14 +58,6 @@ class tsuruio::api::params inherits tsuruio::common {
   $docker_healing_events_collection = 'healing_events'
   $docker_healthcheck_max_time = 120
 
-  # Ec2 credentials
-  $ec2_key_id = $::aws_access_key
-  $ec2_secret_key = $::aws_secret_key
-  $ec2_user_data = "https://s3-sa-east-1.amazonaws.com/tsuru-confs/aws_userdata.sh"
-
-  $iaas_node_protocol = 'http'
-  $iaas_node_port = 4243
-
   $tsuru_debug = false
 
   # versions
@@ -83,6 +75,6 @@ class tsuruio::api::params inherits tsuruio::common {
 
   # Docker
   $bind_docker = '0.0.0.0:4243'
-  $extra_opts_docker = '-r'  
+  $extra_opts_docker = '-r'
 
 }
