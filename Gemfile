@@ -9,7 +9,7 @@ group :development, :test do
 end
 
 if puppetversion = ENV['PUPPET_GEM_VERSION']
-  gem 'puppet', puppetversion, :require => false
+  gem 'puppet', '>= 5.3.4', puppetversion, :require => false
 else
   gem 'puppet', :require => false
 end
